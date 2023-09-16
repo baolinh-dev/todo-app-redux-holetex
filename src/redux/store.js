@@ -1,7 +1,10 @@
-import { legacy_createStore as createStore } from 'redux';
-import rootReducer from './reducer';
+import { legacy_createStore as createStore } from 'redux'; // tùy chỉnh phiên bản cho phù hợp 
+import rootReducer from './reducer'; 
+import { composeWithDevTools } from 'redux-devtools-extension' 
 
-const store = createStore(rootReducer);  
+const composedEnhancers = composeWithDevTools()
+
+const store = createStore(rootReducer, composedEnhancers);  
 
 export default store;
 

@@ -12,19 +12,12 @@ const initState = {
 };
 
 const rootReducer = (state = initState, action) => {
+  console.log({ state, action });
   switch (action.type) {
     case "todoList/addTodo":
       return {
         ...state,
-        todoList: [
-          ...state.todoList,
-          {
-            id: 5,
-            name: "Learn Football",
-            completed: true,
-            priority: "Medium",
-          },
-        ],
+        todoList: [...state.todoList, action.payload],
       };
     default:
       return state;
