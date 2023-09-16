@@ -12,13 +12,14 @@ const initState = {
 };
 
 const rootReducer = (state = initState, action) => {
-  console.log({ state, action });
   switch (action.type) {
     case "todoList/addTodo":
       return {
         ...state,
         todoList: [...state.todoList, action.payload],
-      };
+      }; 
+    // mặc định chưa lọt vào trường hợp nào nên trả về state 
+    // state đó chính là initState
     default:
       return state;
   }
