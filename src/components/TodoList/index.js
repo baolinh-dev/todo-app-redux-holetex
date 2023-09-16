@@ -23,7 +23,9 @@ export default function TodoList() {
         priority: priority,
         completed: false,
       })
-    );
+    ); 
+    setTodoName('') 
+    setPriority('Medium')
   };
   const handleInputChange = (e) => {
     setTodoName(e.target.value);
@@ -35,11 +37,8 @@ export default function TodoList() {
   return (
     <Row style={{ height: "calc(100% - 40px)" }}>
       <Col span={24} style={{ height: "calc(100% - 40px)", overflowY: "auto" }}>
-        {/* <Todo name="Learn React" prioriry="High" />
-        <Todo name="Learn Redux" prioriry="Medium" />
-        <Todo name="Learn JavaScript" prioriry="Low" /> */}
-        {todoList.map(todo => (
-          <Todo name={todo.name} priority={todo.priority} />
+        {todoList.map((todo) => (
+          <Todo key={todo.id} name={todo.name} priority={todo.priority} />
         ))}
       </Col>
       <Col span={24}>
