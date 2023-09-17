@@ -17,6 +17,14 @@ export const statusFilterChange = (status) => {
         type: "filters/statusFilterChange", 
         payload: status
     }
+} 
+
+export const prioritiesFilterChange = (priorities) => {
+    return { 
+        type: "filters/prioritiesFilterChange", 
+        payload: priorities
+    }
 }
+
 
 // action creators ==> function ==> dùng để tạo các obj action ==> tránh boilerplate code
