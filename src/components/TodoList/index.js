@@ -10,8 +10,8 @@ export default function TodoList() {
   const [todoName, setTodoName] = useState("");
   const [priority, setPriority] = useState("Medium");
 
-  const todoList = useSelector(todoRemainingSelector); 
-  // const searchText = useSelector(searchTextSelector) 
+  const todoList = useSelector(todoRemainingSelector);
+  // const searchText = useSelector(searchTextSelector)
 
   const dispatch = useDispatch();
   const handleAddButtonClick = () => {
@@ -24,9 +24,9 @@ export default function TodoList() {
         priority: priority,
         completed: false,
       })
-    ); 
-    setTodoName('') 
-    setPriority('Medium')
+    );
+    setTodoName("");
+    setPriority("Medium");
   };
   const handleInputChange = (e) => {
     setTodoName(e.target.value);
@@ -39,7 +39,13 @@ export default function TodoList() {
     <Row style={{ height: "calc(100% - 40px)" }}>
       <Col span={24} style={{ height: "calc(100% - 40px)", overflowY: "auto" }}>
         {todoList.map((todo) => (
-          <Todo key={todo.id} name={todo.name} priority={todo.priority} completed={todo.completed}/>
+          <Todo
+            id={todo.id}
+            key={todo.id}
+            name={todo.name}
+            priority={todo.priority}
+            completed={todo.completed}
+          />
         ))}
       </Col>
       <Col span={24}>
