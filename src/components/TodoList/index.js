@@ -1,7 +1,7 @@
 import { Col, Row, Input, Button, Select, Tag } from "antd";
 import Todo from "../Todo";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../../redux/actions";
+import { addTodo }  from './TodosSlice'
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import { todoRemainingSelector } from "../../redux/selectors";
