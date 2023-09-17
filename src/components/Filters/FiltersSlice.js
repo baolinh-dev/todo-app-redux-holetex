@@ -11,6 +11,12 @@ const filtersReducer = (state = initState, action) => {
         ...state,
         search: action.payload,
       };
+
+    case "filters/statusFilterChange":
+      return {
+        ...state,
+        status: action.payload,
+      };
     // mặc định chưa lọt vào trường hợp nào nên trả về state
     // state đó chính là initState
     default:

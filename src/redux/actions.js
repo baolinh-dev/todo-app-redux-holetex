@@ -10,6 +10,13 @@ export const searchFilterChange = (text) => {
         type: "filters/searchFilterChange", 
         payload: text
     }
-} 
+}  
+
+export const statusFilterChange = (status) => {
+    return { 
+        type: "filters/statusFilterChange", 
+        payload: status
+    }
+}
 
 // action creators ==> function ==> dùng để tạo các obj action ==> tránh boilerplate code
